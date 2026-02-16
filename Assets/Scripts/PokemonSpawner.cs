@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class PokemonSpawner : MonoBehaviour
 {
@@ -27,8 +26,9 @@ public class PokemonSpawner : MonoBehaviour
     {
         while (true)
         {
-            SpawnRandomPokemon();
             yield return new WaitForSeconds(spawnInterval);
+            
+            SpawnRandomPokemon();
         }
     }
 
@@ -36,7 +36,7 @@ public class PokemonSpawner : MonoBehaviour
     {
         PokemonData randomData = allPokemonData[Random.Range(0, allPokemonData.Length)];
 
-        Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0);
+        Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-16f, 16f), Random.Range(-7f, 7f), 0);
 
         GameObject newPokemon = Instantiate(pokemonPrefab, spawnPosition, Quaternion.identity);
 

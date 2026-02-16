@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48868249ba9ed6e42924e688b1927992, type: 3}
-  m_Name: Bulbizarre
+  m_Name: Slime
   m_EditorClassIdentifier: Assembly-CSharp::PokemonData
-  PokemonName: Bulbizarre
-  description: Bulbi quoi
-  mainSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  pokemonName: Slime
+  description: A simple slime
+  mainSprite: {fileID: -7282886668606283007, guid: 120e2dcada8d6464792a09ba5e9bec28, type: 3}
   baseHealth: 10
   baseDamage: 1
   attackCooldown: 3
   criticalChance: 0.05
-  range: 2
-  speedType: 2
-  PokemonType: 0
-  PokemonBiome: 0
-  PokemonFloorApparition: 0
+  range: 0
+  speedType: 1
+  pokemonType: 0
+  pokemonBiome: 0
+  pokemonFloorApparition: 0
   attackType: 0
   statusEffect: 0
   effectDuration: 0

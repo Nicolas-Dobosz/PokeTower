@@ -1,9 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PokemonData", menuName = "GameData/Pokemon")]
+[CreateAssetMenu(fileName = "PokemonData", menuName = "Scriptable Objects/Pokemon")]
 public class PokemonData : ScriptableObject
 {
-    public string PokemonName;
+    public string pokemonName;
     public string description;
 
     public Sprite mainSprite;
@@ -15,9 +15,9 @@ public class PokemonData : ScriptableObject
     public float range;
 
     public PokemonSpeedType speedType;
-    public PokemonType PokemonType;
-    public PokemonBiome PokemonBiome;
-    public int PokemonFloorApparition;
+    public PokemonType pokemonType;
+    public PokemonBiome pokemonBiome;
+    public int pokemonFloorApparition;
     public PokemonAttackType attackType;
     public PokemonStatusEffect statusEffect;
     public float effectDuration;
