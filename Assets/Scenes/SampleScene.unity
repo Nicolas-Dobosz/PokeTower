@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSpawner
   weaponPrefab: {fileID: 6176179547568106636, guid: 0c661fc1143768a4692d7103eb3c544b, type: 3}
+  bulletPrefab: {fileID: 4779866874905372322, guid: dee4dc2f5812c634c90808c1d6aa8627, type: 3}
 --- !u!1 &260775136
 GameObject:
   m_ObjectHideFlags: 0

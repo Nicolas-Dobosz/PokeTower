@@ -4,6 +4,7 @@ using System.Collections;
 public class WeaponSpawner : MonoBehaviour
 {
     public GameObject weaponPrefab;
+    public GameObject bulletPrefab;
     
     private WeaponData[] allWeaponData;
 
@@ -33,6 +34,7 @@ public class WeaponSpawner : MonoBehaviour
         if (weaponScript != null)
         {
             weaponScript.data = randomData;
+            weaponScript.bulletPrefab = bulletPrefab;
         }
     }
 }

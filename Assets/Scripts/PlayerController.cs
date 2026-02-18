@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
     if (newWeapon.TryGetComponent<Collider2D>(out var col)) col.enabled = false;
     if (newWeapon.TryGetComponent<Rigidbody2D>(out var rb)) rb.simulated = false;
+    newWeapon.isEquiped = true;
 }
 
     void Update()
