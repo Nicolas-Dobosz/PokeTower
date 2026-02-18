@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         attackAction = InputSystem.actions.FindAction("Attack");
         body = GetComponent<Rigidbody2D>();
+        //Cursor.visible = false;
     }
 
     void OnEnable()
@@ -73,13 +74,13 @@ public class PlayerController : MonoBehaviour
         moveDirection = moveAction.ReadValue<Vector2>();
         body.linearVelocity = speed * Time.deltaTime * moveDirection;
 
-        if (moveDirection.x > 0.1f)
-        {
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        }
-        else if (moveDirection.x < -0.1f)
-        {
-            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-        }
+        // if (moveDirection.x > 0.1f)
+        // {
+        //     transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        // }
+        // else if (moveDirection.x < -0.1f)
+        // {
+        //     transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        // }
     }
 }

@@ -2,26 +2,50 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] InputActionAsset inputActions;
-    public SpriteRenderer spriteRenderer;
-    private PolygonCollider2D polygonCollider2D;
     public BulletData bulletData;
-    InputAction lookAction;
+    public WeaponData weaponData;
+    private SpriteRenderer spriteRenderer;
+    private PolygonCollider2D polygonCollider2D;
+    private Rigidbody2D rb;
+
     void Start()
     {
-        Debug.Log(bulletData);
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = bulletData.sprite;
-        polygonCollider2D = gameObject.AddComponent<PolygonCollider2D>();
-        polygonCollider2D.isTrigger = true;
+        if (bulletData != null)
+        {
+            spriteRenderer.sprite = bulletData.sprite;
+        }
 
-        lookAction = InputSystem.actions.FindAction("Look");
+        polygonCollider2D = gameObject.AddComponent<PolygonCollider2D>();
+        polygonCollider2D.isTrigger = true; 
+
+        rb = GetComponent<Rigidbody2D>();
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        
+        if (weaponData != null)
+        {
+            rb.linearVelocity = transform.right * weaponData.speed;
+        }
+
+        Destroy(gameObject, 5f);
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player")) return;
+
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Touché !");
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

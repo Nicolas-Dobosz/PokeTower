@@ -10,9 +10,7 @@ public class Weapon : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public GameObject bulletPrefab;
     public bool isEquiped = false;
-
     BulletData bulletData;
-
     InputAction lookAction;
 
     void Start()
@@ -49,12 +47,16 @@ public class Weapon : MonoBehaviour
     {
         Debug.Log("Piou");
 
-        GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Vector3 spawnPosition = transform.TransformPoint(data.firePointOffset);
+
+        GameObject newBullet = Instantiate(bulletPrefab, spawnPosition, transform.rotation);
+
         Bullet bulletScript = newBullet.AddComponent<Bullet>();
 
         if (bulletScript != null)
         {
             bulletScript.bulletData = bulletData;
+            bulletScript.weaponData = data;
         }
     }
 }

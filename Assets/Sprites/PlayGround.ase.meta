@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: PlayGround
     originalName: 
-    pivot: {x: 16.516129, y: -35.428574}
+    pivot: {x: 10.893617, y: -32}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,8 +137,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 28
+      width: 47
+      height: 31
     spriteID: bc1f6d035f3440a428d75efd7e672ac3
     spriteBone: []
     spriteOutline: []
@@ -169,8 +169,8 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 992
-        width: 31
-        height: 28
+        width: 47
+        height: 31
       spriteId: bc1f6d035f3440a428d75efd7e672ac3
     linkedCells: []
     tileCells: []
