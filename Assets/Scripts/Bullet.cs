@@ -35,11 +35,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) return;
-
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Touché !");
+            if (other.TryGetComponent<Pokemon>(out var enemy))
+            {
+                enemy.currentHealth -= weaponData.damage;
+            }
             Destroy(gameObject);
         }
 

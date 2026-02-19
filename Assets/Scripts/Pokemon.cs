@@ -6,7 +6,7 @@ public class Pokemon : MonoBehaviour
     public PokemonData data;
     private SpriteRenderer spriteRenderer;
     private PolygonCollider2D polygonCollider2D;
-    private int currentHealth;
+    public int currentHealth;
 
     void Start()
     {
@@ -22,10 +22,11 @@ public class Pokemon : MonoBehaviour
         polygonCollider2D = gameObject.AddComponent<PolygonCollider2D>();
     }
 
-    public void TakeDamage(int amount)
+    void Update()
     {
-        currentHealth -= amount;
-        Debug.Log(data.pokemonName + " a maintenant " + currentHealth + " PV");
-        if (currentHealth <= 0) Destroy(gameObject);
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

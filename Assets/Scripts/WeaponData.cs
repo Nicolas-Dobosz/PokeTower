@@ -11,10 +11,12 @@ public class WeaponData : ScriptableObject
 
     public Vector2 firePointOffset;
 
+    public int speed;
+    public int damage;
+
     public Rarity rarity;
     public Type type;
     public StatusEffect statusEffect;
-    public int speed;
 
     public enum StatusEffect { None, Poison, Freeze, Burn, Stun, Slow, Silence }
     public enum Speed { VerySlow, Slow, Normal, Fast, VeryFast }
