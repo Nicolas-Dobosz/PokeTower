@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         moveDirection = moveAction.ReadValue<Vector2>();
-        body.linearVelocity = speed * Time.deltaTime * moveDirection;
+        body.linearVelocity = speed * moveDirection;
 
         // if (moveDirection.x > 0.1f)
         // {

@@ -51,18 +51,21 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        lastShootTime = Time.time;
-
-        Vector3 spawnPosition = transform.TransformPoint(data.firePointOffset);
-
-        GameObject newBullet = Instantiate(bulletPrefab, spawnPosition, transform.rotation);
-
-        Bullet bulletScript = newBullet.AddComponent<Bullet>();
-
-        if (bulletScript != null)
+        if (data.type == WeaponData.Type.Ranged)
         {
-            bulletScript.bulletData = bulletData;
-            bulletScript.weaponData = data;
+            lastShootTime = Time.time;
+
+            Vector3 spawnPosition = transform.TransformPoint(data.firePointOffset);
+
+            GameObject newBullet = Instantiate(bulletPrefab, spawnPosition, transform.rotation);
+
+            Bullet bulletScript = newBullet.AddComponent<Bullet>();
+
+            if (bulletScript != null)
+            {
+                bulletScript.bulletData = bulletData;
+                bulletScript.weaponData = data;
+            }
         }
-    }
+    }  
 }

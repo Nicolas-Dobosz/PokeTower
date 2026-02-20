@@ -40,8 +40,7 @@ public class PokemonSpawner : MonoBehaviour
 
         GameObject newPokemon = Instantiate(pokemonPrefab, spawnPosition, Quaternion.identity);
 
-        Pokemon pokemonScript = newPokemon.AddComponent<Pokemon>();
-        if (pokemonScript != null)
+        if (newPokemon.TryGetComponent<Pokemon>(out var pokemonScript))
         {
             pokemonScript.data = randomData;
         }

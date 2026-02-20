@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Pokemon : MonoBehaviour
@@ -8,9 +9,13 @@ public class Pokemon : MonoBehaviour
     private PolygonCollider2D polygonCollider2D;
     public int currentHealth;
 
+    [SerializeField] Material flashMaterial;
+    private Material originalMaterial;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        originalMaterial = spriteRenderer.material;
 
         if (data != null)
         {
@@ -28,5 +33,15 @@ public class Pokemon : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public IEnumerator Flash()
+    {
+        spriteRenderer.material = flashMaterial;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        if (spriteRenderer != null) 
+            spriteRenderer.material = originalMaterial;
     }
 }

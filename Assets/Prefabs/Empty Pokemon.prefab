@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1735987078031790289}
   - component: {fileID: 9138326291793239468}
+  - component: {fileID: -7642661942006172853}
   m_Layer: 0
   m_Name: Empty Pokemon
   m_TagString: Enemy
@@ -91,3 +92,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7642661942006172853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7821156808741782405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad2ea10eab49249a6e6548a0b6de2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pokemon
+  data: {fileID: 0}
+  currentHealth: 0
+  flashMaterial: {fileID: 2100000, guid: 167549b7802e5e549b36ef320ec4735e, type: 2}

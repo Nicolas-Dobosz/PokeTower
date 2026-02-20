@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,6 +41,7 @@ public class Bullet : MonoBehaviour
             if (other.TryGetComponent<Pokemon>(out var enemy))
             {
                 enemy.currentHealth -= weaponData.damage;
+                enemy.StartCoroutine(enemy.Flash());
             }
             Destroy(gameObject);
         }
@@ -49,4 +51,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
 }
