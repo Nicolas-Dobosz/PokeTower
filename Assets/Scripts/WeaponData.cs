@@ -13,6 +13,7 @@ public class WeaponData : ScriptableObject
 
     public int speed;
     public int damage;
+    public float delay;
 
     public Rarity rarity;
     public Type type;

@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     public bool isEquiped = false;
     BulletData bulletData;
     InputAction lookAction;
+    private float lastShootTime = 0f;
 
     void Start()
     {
@@ -45,7 +46,12 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Piou");
+        if (Time.time < lastShootTime + data.delay) 
+        {
+            return;
+        }
+
+        lastShootTime = Time.time;
 
         Vector3 spawnPosition = transform.TransformPoint(data.firePointOffset);
 

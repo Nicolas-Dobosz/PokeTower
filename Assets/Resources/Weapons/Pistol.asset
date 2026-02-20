@@ -17,7 +17,9 @@ MonoBehaviour:
   mainSrpite: {fileID: 21300000, guid: 25c842995b6d28d42bf7a716580f0fab, type: 3}
   bullet: {fileID: 11400000, guid: 404dc234ed2c7f842b296424fc628c14, type: 2}
   firePointOffset: {x: 0.5, y: 0}
+  speed: 10
+  damage: 1
+  delay: 1
   rarity: 0
   type: 1
   statusEffect: 0
-  speed: 0

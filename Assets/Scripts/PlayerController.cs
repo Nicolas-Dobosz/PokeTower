@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (attackAction.WasPressedThisFrame() && currentWeapon != null)
+        if (attackAction.IsPressed() && currentWeapon != null)
         {
             currentWeapon.Shoot();
         }
